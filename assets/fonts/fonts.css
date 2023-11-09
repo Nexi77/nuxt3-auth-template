@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('./Montserrat-VariableFont_wght.ttf') format('ttf');
+    font-weight: 300 900; /* Adjust the weight range based on your font */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: YourFontName;
+    src: url('./Montserrat-VariableFont_wght.ttf') format('ttf');
+    font-weight: 300 900; /* Adjust the weight range based on your font */
+    font-style: italic;
+  }
