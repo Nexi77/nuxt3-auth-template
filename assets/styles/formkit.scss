@@ -12,6 +12,10 @@
     }
 }
 
+.formkit-wrapper:has(+ .formkit-messages) .formkit-inner {
+    box-shadow: 0 4px 0 -3px var(--danger)
+}
+
 input.formkit-input {
     background-color: transparent;
     border: 0;
@@ -32,6 +36,7 @@ input.formkit-input {
     background-color: var(--clr-primary);
     color: var(--clr-white-400);
     text-transform: uppercase;
+    box-shadow: inset 0 0 4px -1px rgb(66 68 90 / 100%);
     cursor: pointer;
     will-change: background;
     transition: background 0.5s ease;
