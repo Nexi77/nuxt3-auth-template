@@ -17,7 +17,7 @@ async function onSubmit()
 <template>
     <main>
         <Card>
-            <h2>Login</h2>
+            <h2>Sign in</h2>
             <FormKit type="form" submit-label="Login" @submit="onSubmit">
                 <FormKit
                     id="email"
@@ -48,7 +48,7 @@ main {
     max-width: 400px;
     width: 100%;
     position: relative;
-    top: -50px;
+    top: -80px;
     z-index: 2;
     margin: 0 auto;
 

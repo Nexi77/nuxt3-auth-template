@@ -33,7 +33,7 @@
     }
 
     .pattern {
-        height: 100px;
+        height: 150px;
         width: 100%;
         position: absolute;
         bottom: 0;
