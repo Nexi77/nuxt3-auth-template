@@ -5,4 +5,24 @@
     --font-size-lg: clamp(1.56rem, 0.91vw + 1.38rem, 2.11rem);
     --font-size-xl: clamp(1.95rem, 1.43vw + 1.67rem, 2.81rem);
     --font-size-xxl: clamp(2.44rem, 2.18vw + 2.01rem, 3.75rem);
+
+    // colors pallete
+    --clr-primary: rgb(0 165 255 / 100%);
+    --clr-secondary: rgb(124 208 254 / 100%);
+    --clr-accent: rgb(4 86 131);
+    --clr-white-400: rgb(255 255 255 / 100%);
+    --clr-white-500: rgb(239 239 239 / 100%);
+    --danger: rgb(209 34 34);
+    --button-bg: rgb(64 146 255);
+
+    // gradients
+    --banner-vertical-gradient: linear-gradient(180deg, var(--clr-primary) 49%, var(--clr-secondary) 100%);
+    --button-gradient: linear-gradient(90deg, var(--clr-primary) 42%, var(--clr-secondary) 100%);
+
+    // radius
+    --base-radius: 10px;
+}
+
+body {
+    background-color: var(--clr-white-500);
 }
