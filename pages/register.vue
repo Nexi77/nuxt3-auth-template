@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { FormKitNode } from '@formkit/core';
 import type { Tokens, FetchErrorWithMessage } from '@/types/api';
 definePageMeta({
     layout: 'logged-out'
@@ -10,7 +11,7 @@ interface FormData {
     confirmPassword: string;
 }
 
-async function onSubmit(data: FormData)
+async function onSubmit(data: FormData, node: FormKitNode)
 {
     try
     {
@@ -19,10 +20,12 @@ async function onSubmit(data: FormData)
     catch (error)
     {
         const { $toast } = useNuxtApp();
-        const errorMessage = (error as FetchErrorWithMessage).data?.message;
+        const { formFormattedMessages, message } = useCustomError(error as FetchErrorWithMessage);
 
-        if (errorMessage)
-            $toast.error(errorMessage);
+        if (message)
+            $toast.error(message);
+
+        node.setErrors([], formFormattedMessages);
     }
 }
 </script>

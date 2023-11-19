@@ -69,6 +69,10 @@ input.formkit-input {
     li {
         font-size: var(--font-size-sm);
         color: var(--danger);
+
+        &::first-letter {
+            text-transform: capitalize;
+        }
     }
 }
 

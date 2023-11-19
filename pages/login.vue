@@ -1,16 +1,31 @@
 <script setup lang="ts">
+import type { FetchErrorWithMessage, Tokens } from '~/types/api';
 
 definePageMeta({
     layout: 'logged-out'
 });
 
-// interface FormData {
-//     email: string;
-// }
+interface FormData {
+    email: string;
+    password: string;
+}
 
-async function onSubmit()
+async function onSubmit(data: FormData, node: FormKitNode)
 {
+    try
+    {
+        await useApi().post<Tokens>('auth/local/signin', data);
+    }
+    catch (error)
+    {
+        const { $toast } = useNuxtApp();
+        const { formFormattedMessages, message } = useCustomError(error as FetchErrorWithMessage);
 
+        if (message)
+            $toast.error(message);
+
+        node.setErrors([], formFormattedMessages);
+    }
 }
 </script>
 
@@ -35,7 +50,7 @@ async function onSubmit()
                     name="password"
                     label="Password"
                     prefix-icon="password"
-                    validation="required|min:4"
+                    validation="required"
                     validation-visibility="blur"
                 />
                 <div class="link-wrapper">
