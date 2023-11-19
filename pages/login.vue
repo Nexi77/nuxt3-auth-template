@@ -38,6 +38,11 @@ async function onSubmit()
                     validation="required|min:4"
                     validation-visibility="blur"
                 />
+                <div class="link-wrapper">
+                    <NuxtLink to="register" class="link">
+                        Do not have an account? Sign up!
+                    </NuxtLink>
+                </div>
             </FormKit>
         </Card>
     </main>
@@ -57,6 +62,12 @@ main {
         color: var(--clr-primary);
         text-transform: uppercase;
         margin-block-end: 1.25rem;
+    }
+
+    .link-wrapper {
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
     }
 }
 </style>
